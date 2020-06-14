@@ -9,6 +9,7 @@ use pocketmine\event\Listener;
 use pocketmine\event\player\PlayerInteractEvent;
 use pocketmine\event\player\PlayerJoinEvent;
 use pocketmine\event\player\PlayerRespawnEvent;
+use pocketmine\event\player\PlayerQuitEvent;
 use pocketmine\item\Item;
 use pocketmine\Player;
 use pocketmine\plugin\PluginBase;
@@ -45,13 +46,23 @@ class Main extends PluginBase implements Listener
     public function onJoin(PlayerJoinEvent $event) {
         $player = $event->getPlayer();
         $this->onItem($player);
+        $message = str_replace("{player}", $player->getDisplayName();
+		$this->getConfig()->get("JoinMessage"));
+        $event->setJoinMessage($message);
     }
 	
 	public function onRespawn(PlayerRespawnEvent $event) {
         $player = $event->getPlayer();
         $this->onItem($player);
     }
-
+	
+    public function onQuit(PlayerQuitEvent $event) {
+		$player = $event->getPlayer();
+        $message = str_replace("{player}", $player->getDisplayName();
+		$this->getConfig()->get("QuitMessage"));
+        $event->setQuitMessage($message);
+	}
+	
     public function onInteract(PlayerInteractEvent $event) {
         $player = $event->getPlayer();
         if ($player->getLevel()->getFolderName() == $this->getServer()->getDefaultLevel()->getFolderName()) {
