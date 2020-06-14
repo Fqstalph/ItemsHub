@@ -1,4 +1,5 @@
 # ItemsHub
-A pmmp plugin to give items to the player join
 
-V2 = In the second version of ItemsHub, the CustomJoin and Quit was added under request
+Fully customizable plugin where you can set an item a certain command and especially a Custom name, in the V2 was added the Custom Join and Quit
+
+Twitter: @fqstalph 
