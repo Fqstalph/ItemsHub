@@ -4,5 +4,5 @@ branches:
 - master
 projects:
   ItemsHub:
-    path: ""
+    path: "icon.png"
 ...
