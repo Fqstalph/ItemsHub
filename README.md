@@ -1,5 +1,4 @@
 # ItemsHub
 
-Fully customizable plugin where you can set an item a certain command and especially a Custom name, in the V2 was added the Custom Join and Quit
+This plugin to the Player Join in addition to sending a Custom Join Message automatically givva to the player 3 items completely set by the config, from the Custom Name to the Command that they will have to perform
 
-Twitter: @fqstalph 
