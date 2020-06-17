@@ -10,6 +10,7 @@ use pocketmine\event\player\PlayerInteractEvent;
 use pocketmine\event\player\PlayerJoinEvent;
 use pocketmine\event\player\PlayerRespawnEvent;
 use pocketmine\event\player\PlayerQuitEvent;
+use pocketmine\event\player\PlayerDropItemEvent;
 use pocketmine\item\Item;
 use pocketmine\Player;
 use pocketmine\plugin\PluginBase;
@@ -61,7 +62,11 @@ class Main extends PluginBase implements Listener
 		$this->getConfig()->get("QuitMessage"));
         $event->setQuitMessage($message);
 	}
-	
+
+	public function onDrop(PlayerDropItemEvent $ev){
+          $ev->setCancelled(true);
+          }
+
     public function onInteract(PlayerInteractEvent $event) {
         $player = $event->getPlayer();
         if ($player->getLevel()->getFolderName() == $this->getServer()->getDefaultLevel()->getFolderName()) {
